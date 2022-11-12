@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="Hero">
+</div>
+<div class="bg-black py-5">
+    <div class="mx-auto w-75">
+        <h2 class="Vision text-white">AROC envisions powerful and liberated Arab communities living with freedom and self-determination from the Bay Area to our homelands. We are abolitionists, feminists, and internationalists who believe that the liberation of SWANA (South West Asian North African) people is inextricably tied to the liberation of all oppressed people. </h2>
+    </div>
+    <div class="mx-auto w-75 py-5 d-flex flex-lg-row flex-column justify-content-between">
+        <div class="PhotoSection d-flex flex-column justify-content-center SectionOne">
+            <div class="PhotoSection-text text-center text-white">
+                THING ONE
+            </div>
+            <span class="OvalButton SectionButton">Button One</span>
+        </div>
+        <div class="PhotoSection d-flex flex-column justify-content-center SectionTwo">
+            <div class="PhotoSection-text text-center text-white">
+                THING TWO
+            </div>
+            <span class="OvalButton SectionButton">Button Two</span>
+        </div>
+        <div class="PhotoSection d-flex flex-column justify-content-center SectionThree">
+            <div class="PhotoSection-text text-center text-white">
+                THING THREE
+            </div>
+            <span class="OvalButton SectionButton">Button Three</span>
+        </div>
+    </div>
+    <!-- <div class="mx-auto w-75 py-5">
+        <h3 class="text-center SectionTitle text-white text-uppercase">Latest News</h3>
+
+    </div> -->
+    
+
+</div>
+<div class="mx-auto w-75 py-5">
+    <h3 class="SectionTitle text-uppercase">Donate</h3>
+    <p class="py-4">AROC is a 501(c)(3) organization envisioning a something something something something. </p>
+    <div class="social-donate my-3">
+        <a class="OvalButton DonateButton d-inline-block" href="">Donate</a>
+    </div>
+    <hr class="my-5">
+    <h3 class="SectionTitle text-uppercase">Stay Connected</h3>
+    <div class="d-flex flex-lg-row flex-column py-4">
+        <div style="flex:1;">
+            <p>Sign up for our newsletter to keep up with something something something something. </p>
+        </div>
+        <div style="flex:1;">
+            <form>
+                <label for="id_firstName" class="form-label">First Name</label>
+                <input id="id_firstName" type="text" class="form-control mb-3" name='first_name'>
+                <label for="id_lasttName" class="form-label">Last Name</label>
+                <input id="id_lastName" type="text" class="form-control mb-3" name='last_name'>
+                <label for="id_email" class="form-label">Email</label>
+                <input id="id_email" type="email" class="form-control mb-3" name='email'>
+                <label for="id_category" class="form-label">Affiliation</label>
+                <select id="id_category" class="form-select mb-3">
+                    <option>Community</option>
+                    <option>Donor</option>
+                    <option>Partner</option>
+                    <option>Other</option>
+                </select>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="id_checkBox">
+                    <label class="form-check-label" for="id_checkBox">Sign Me Up for Text Alerts</label>
+                  </div>
+                <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="Gradient py-5">
+    <div class="mx-auto w-75 py-5">
+        <h3 class="text-white text-center text-uppercase py-3">An inspirational quote of some kind? </h3>
+        <p class="Quote-byline text-white text-center">- The Person Who Said It</p>
+    </div>
+</div>
+{% endblock %}
