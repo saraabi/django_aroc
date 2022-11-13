@@ -1,4 +1,5 @@
-import django_heroku
+
+import dj_database_url
 import os
 
 from django.core.exceptions import ImproperlyConfigured
@@ -94,6 +95,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+MAX_CONN_AGE = 600
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -116,5 +118,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-django_heroku.settings(locals(), staticfiles=False)
