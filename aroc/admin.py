@@ -2,6 +2,8 @@ from django.contrib import admin
 
 from .models import Subscriber
 
+admin.site.site_header = 'AROC Web Administration'
+
 @admin.register(Subscriber)
 class SubscriberAdmin(admin.ModelAdmin):
     list_display = (
