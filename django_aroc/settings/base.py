@@ -117,6 +117,14 @@ USE_I18N = True
 
 USE_TZ = True
 
+SENDGRID_API_KEY = get_env_variable('SENDGRID_API_KEY')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'admin@mail.araborganizing.org'
+SERVER_EMAIL = 'server@mail.araborganizing.org'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
