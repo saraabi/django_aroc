@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 {% block content %}
 <div class="Hero">
 </div>
@@ -46,26 +48,30 @@
             <p>Sign up for our newsletter to keep up with something something something something. </p>
         </div>
         <div style="flex:1;">
-            <form>
+            {% crispy form form.helper %}
+            <!-- <form action="{% url 'home' %}" method="POST">
+                {% csrf_token %}
                 <label for="id_firstName" class="form-label">First Name</label>
                 <input id="id_firstName" type="text" class="form-control mb-3" name='first_name'>
                 <label for="id_lasttName" class="form-label">Last Name</label>
                 <input id="id_lastName" type="text" class="form-control mb-3" name='last_name'>
                 <label for="id_email" class="form-label">Email</label>
                 <input id="id_email" type="email" class="form-control mb-3" name='email'>
+                <label for="id_phone" class="form-label">Phone</label>
+                <input id="id_phone" type="text" class="form-control mb-3" name='phone'>
                 <label for="id_category" class="form-label">Affiliation</label>
-                <select id="id_category" class="form-select mb-3">
-                    <option>Community</option>
-                    <option>Donor</option>
-                    <option>Partner</option>
-                    <option>Other</option>
+                <select id="id_category" class="form-select mb-3" name="category">
+                    <option value="community">Community</option>
+                    <option value="donor">Donor</option>
+                    <option value="partner">Partner</option>
+                    <option value="other">Other</option>
                 </select>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="id_checkBox">
+                    <input type="checkbox" class="form-check-input" id="id_checkBox" name="is_subscribed_sms">
                     <label class="form-check-label" for="id_checkBox">Sign Me Up for Text Alerts</label>
                   </div>
                 <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
-            </form>
+            </form> -->
         </div>
     </div>
 </div>

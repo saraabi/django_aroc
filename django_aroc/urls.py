@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    path('idara/', admin.site.urls),
     path('', include('aroc.urls')),
 ]
 
