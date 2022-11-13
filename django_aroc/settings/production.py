@@ -4,9 +4,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['aroc.herokuapp.com', 'araborganizing.org']
 
-DATABASES["default"] = dj_database_url.config(
+DATABASES = {
+    'default': dj_database_url.config(
     conn_max_age=MAX_CONN_AGE, ssl_require=True)
-
+}
 # SECURE_SSL_REDIRECT = True
 
 # STATIC_URL = 'https://{0}/{1}/'.format(
