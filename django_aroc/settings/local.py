@@ -17,5 +17,4 @@ DATABASES = {
     }
 }
 
-
 STATIC_URL = 'static/'

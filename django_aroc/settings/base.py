@@ -73,8 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_aroc.wsgi.application'
 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -125,7 +123,6 @@ STATIC_URL = "static/"
 # Enable WhiteNoise's GZip compression of static assets.
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
 # Test Runner Config
 class HerokuDiscoverRunner(DiscoverRunner):
     """Test Runner for Heroku CI, which provides a database for you.
@@ -135,11 +132,9 @@ class HerokuDiscoverRunner(DiscoverRunner):
         self.keepdb = True
         return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
 
-
 # Use HerokuDiscoverRunner on Heroku CI
 if "CI" in os.environ:
     TEST_RUNNER = "gettingstarted.settings.HerokuDiscoverRunner"
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
