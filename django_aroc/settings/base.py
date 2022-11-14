@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 ADMINS = (
-    ('Samer', 'sarrabi@gmai.com'),
+    ('Samer', 'sarrabi@gmail.com'),
 )
 
 # Quick-start development settings - unsuitable for production
