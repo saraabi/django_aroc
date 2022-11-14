@@ -118,7 +118,13 @@
                 text-align: center;
                 width: 50%;
                 margin: 1rem auto;
+                transition: 0.2s;
             }
+                .SectionButton:hover {
+                    background-color: #FFFFFF;
+                    color: #010101;
+                    opacity: 0.7;
+                }
             .Hero {
                 background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url(https://asfour.s3.us-west-1.amazonaws.com/media/public/eid_featured-1020x574.jpeg);
                 min-height: 600px;
@@ -211,6 +217,7 @@
                     max-width: 100%;
                     margin-bottom: 50px;
                 }
+            }
         </style>
     </head>
     <body>
@@ -223,20 +230,20 @@
         {% endif %}
         <nav class="navbar navbar-expand-lg sticky-top bg-white">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="https://asfour.s3.us-west-1.amazonaws.com/media/public/aroc_logo.jpg" height=90></a>
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="https://asfour.s3.us-west-1.amazonaws.com/media/public/aroc_logo.jpg" height=90></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="mailto:info@araborganizing.org">Contact</a>
+                        <a class="nav-link" href="https://us10.list-manage.com/contact-form?u=40bbc5d297cb5db1fd1a5ca21&form_id=1cea505ec15293ac4c9e82fcdee69646">Contact Us</a>
                       </li>
                       <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -272,7 +279,7 @@
                 </div>
                 <div class="FooterSection text-center">
                     <h3 class="SectionTitle text-uppercase">Get Involved</h3>
-                    <p class="text-white pt-4"><a href="mailto:info@araborganizing.org">Contact Us</a></p>
+                    <p class="text-white pt-4"><a href=" https://us10.list-manage.com/contact-form?u=40bbc5d297cb5db1fd1a5ca21&form_id=1cea505ec15293ac4c9e82fcdee69646">Contact Us</a></p>
                     
                 </div>
                 <div class="FooterSection text-center">
