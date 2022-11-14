@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="Hero-about Hero-learn">
+    <h1 class="text-center text-white text-uppercase">Our Work</h1>
+</div>
+<div class="mx-auto w-75 py-5">
+    <h3 class="SectionTitle text-uppercase pb-2">Mission</h3>
+    <p class="py-3">OAROC staff and members build power within the Bay Area Arab community to achieve racial, gender, and economic justice.  We provide an accessible and diverse cultural space for formulation of concrete campaigns and strategy to organize for change while prioritizing and taking leadership from the most marginalized sectors of our constituency (working class folks, immigrants, women) to inform our work.   </p>
+        
+    <p class="py-3">Our programs empower the community to receive support for their daily struggles with institutionalized anti-Arab racism that keep the working-class Arab community unrecognized, and consequently, severely under-resourced.  We provide direct legal services and rapid response to low income Arab and Muslim immigrants to meet the growing need for support around family reunification, immigration enforcement raids and deportation defense, asylum, and FBI repression.  AROC staff connect folks to city services that would generally be inaccessible to our very marginalized and under-represented community.</p>
+    <div class="social-donate my-5">
+        <a class="OvalButton DonateButton d-inline-block" href="https://araborganizing.networkforgood.com/projects/100246-main-giving-page">Donate</a>
+    </div>
+    <hr class="my-5">
+    <h3 class="SectionTitle text-uppercase">Our Team</h3>
+    <div class="mx-auto w-75 py-5">
+    </div>
+    <h3 class="SectionTitle text-uppercase">Stay Connected</h3>
+    <div class="d-flex flex-lg-row flex-column py-4">
+        <div style="flex:1;">
+            <p>Sign up for our newsletter to keep up with something something something something. </p>
+        </div>
+        <div style="flex:1;">
+            <form>
+                <label for="id_firstName" class="form-label">First Name</label>
+                <input id="id_firstName" type="text" class="form-control mb-3" name='first_name'>
+                <label for="id_lasttName" class="form-label">Last Name</label>
+                <input id="id_lastName" type="text" class="form-control mb-3" name='last_name'>
+                <label for="id_email" class="form-label">Email</label>
+                <input id="id_email" type="email" class="form-control mb-3" name='email'>
+                <label for="id_category" class="form-label">Affiliation</label>
+                <select id="id_category" class="form-select mb-3">
+                    <option>Community</option>
+                    <option>Donor</option>
+                    <option>Partner</option>
+                    <option>Other</option>
+                </select>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="id_checkBox">
+                    <label class="form-check-label" for="id_checkBox">Sign Me Up for Text Alerts</label>
+                  </div>
+                <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="Gradient py-5">
+    <div class="mx-auto w-75 py-5">
+        <h4 class="text-white text-center text-uppercase py-3">"Your power is relative, but it is real. And if you do not learn to use it, it will be used, against you, and me, and our children. Change did not begin with you, and it will not end with you, but what you do in your life is an absolutely vital piece of that chain."</h4>
+        <p class="Quote-byline text-white text-center">- Audre Lorde</p>
+    </div>
+</div>
+{% endblock %}
