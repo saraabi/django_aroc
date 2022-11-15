@@ -12,10 +12,8 @@
         <meta property="og:description" content="The Arab Resource and Organizing Center (AROC) envisions powerful and liberated Arab communities living with freedom and self-determination from the Bay Area to our homelands." />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
-        <!-- CSS only -->
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/226fadf0e2.js" crossorigin="anonymous"></script>
@@ -126,15 +124,25 @@
                     opacity: 0.7;
                 }
             .Hero {
-                background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url(https://asfour.s3.us-west-1.amazonaws.com/media/public/eid_featured-1020x574.jpeg);
+                background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url(https://asfour.s3.us-west-1.amazonaws.com/media/public/dabke_highrez.jpeg);
                 min-height: 600px;
                 /* background-attachment: fixed; */
+                background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
+                position: relative;
             }
+                .Hero p {
+                    position: absolute;
+                    bottom: 2%;
+                    right: 2%;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 14px;
+                    opacity: 0.7;
+                }
             .Hero-about {
-                background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url(https://asfour.s3.us-west-1.amazonaws.com/media/public/sunrise_flag.jpg);
-                background-position-y: 45%;
+                background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url(https://asfour.s3.us-west-1.amazonaws.com/media/public/staff.jpg);
+                background-position: center;
                 min-height: 600px;
                 /* background-attachment: fixed; */
                 background-repeat: no-repeat;
@@ -155,13 +163,14 @@
                     font-size: 14px;
                 }
             .Hero-learn {
-                background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url(https://asfour.s3.us-west-1.amazonaws.com/media/public/urbanshield.jpeg);
+                background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url(https://asfour.s3.us-west-1.amazonaws.com/media/public/endurbanshield-11.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position-y: 28%;
                 position: relative;
             }
             .PhotoSection {
+                border-radius: 4px;
                 height: 450px;
                 width: 340px;
                 text-decoration: none;
@@ -298,7 +307,7 @@
                     
                 </div>
                 <div class="FooterSection text-center">
-                    <img src="https://asfour.s3.us-west-1.amazonaws.com/media/public/aroc_logo.jpg" height=100>
+                    <img src="https://asfour.s3.us-west-1.amazonaws.com/media/public/arocwhite.png" height=100>
                 </div>
             </div>
         </footer>

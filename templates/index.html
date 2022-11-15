@@ -3,6 +3,7 @@
 
 {% block content %}
 <div class="Hero">
+    <p class="text-white">Photo Credit: Brooke Anderson</p>
 </div>
 <div class="bg-black py-5">
     <div class="mx-auto w-75">
@@ -45,40 +46,17 @@
     <h3 class="SectionTitle text-uppercase">Stay Connected</h3>
     <div class="d-flex flex-lg-row flex-column py-4">
         <div style="flex:1;">
-            <p>Sign up for our newsletter to keep up with our current campaigns, get announcements about current actions and rapid response mobilizations, and general updates about our work.</p>
+            <p style="width:85%;">Sign up for our newsletter to keep up with our current campaigns, get announcements about current actions and rapid response mobilizations, and general updates about our work.</p>
         </div>
         <div style="flex:1;">
             {% crispy form form.helper %}
-            <!-- <form action="{% url 'home' %}" method="POST">
-                {% csrf_token %}
-                <label for="id_firstName" class="form-label">First Name</label>
-                <input id="id_firstName" type="text" class="form-control mb-3" name='first_name'>
-                <label for="id_lasttName" class="form-label">Last Name</label>
-                <input id="id_lastName" type="text" class="form-control mb-3" name='last_name'>
-                <label for="id_email" class="form-label">Email</label>
-                <input id="id_email" type="email" class="form-control mb-3" name='email'>
-                <label for="id_phone" class="form-label">Phone</label>
-                <input id="id_phone" type="text" class="form-control mb-3" name='phone'>
-                <label for="id_category" class="form-label">Affiliation</label>
-                <select id="id_category" class="form-select mb-3" name="category">
-                    <option value="community">Community</option>
-                    <option value="donor">Donor</option>
-                    <option value="partner">Partner</option>
-                    <option value="other">Other</option>
-                </select>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="id_checkBox" name="is_subscribed_sms">
-                    <label class="form-check-label" for="id_checkBox">Sign Me Up for Text Alerts</label>
-                  </div>
-                <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
-            </form> -->
         </div>
     </div>
 </div>
 <div class="Gradient py-5">
     <div class="mx-auto w-75 py-5">
         <h4 class="text-white text-center text-uppercase py-3">"Your power is relative, but it is real. And if you do not learn to use it, it will be used, against you, and me, and our children. Change did not begin with you, and it will not end with you, but what you do in your life is an absolutely vital piece of that chain."</h4>
-        <p class="Quote-byline text-white text-center">- Audre Lorde</p>
+        <p class="Quote-byline text-white text-center"><em>- Audre Lorde</em></p>
     </div>
 </div>
 {% endblock %}
