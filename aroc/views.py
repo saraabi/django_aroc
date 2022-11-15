@@ -1,13 +1,13 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import View
+from django.views.generic import ListView, View
 from django.views.generic.edit import CreateView
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout
 
-from .models import Subscriber
+from .models import Staff, Subscriber
 
 class Home(SuccessMessageMixin, CreateView):
     model = Subscriber
@@ -22,3 +22,7 @@ class Home(SuccessMessageMixin, CreateView):
        form.helper = FormHelper()
        form.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary w-100'))
        return form
+
+class StaffList(ListView):
+    model = Staff
+

@@ -16,11 +16,16 @@
     <hr class="my-5">
     <h3 class="SectionTitle text-uppercase">Our Team</h3>
     <div class="Bios mx-auto w-75 py-5">
-        <h5 class="py-4">Arab Youth Organizing (AYO) Team</h5>
+        {% regroup staff_list by category as cat_list %}
+        {% for cat in cat_list %}
+        <h5 class="py-4">{{ cat.grouper }}</h5>
+        {% for staff in cat.list %}
         <div class="Bio">
-            <h6>Nour Bouhassoun, Youth Coordinator</h6>
-            <p>Nour coordinates the  Arab Youth Organizing (AYO), the youth arm of the Arab Resource and Organizing Center. She was born and raised in Syria and  moved to the Bay Area with family in 2012, a year after what is known as the Arab Spring.  She has been part of AYO since.  Growing up, Nour believes there is nothing that empowered her more than connecting with Arab youth around shared struggles and experiences, and AROC opened my eyes to the world of social justice organizing.</p>
+            <h6>{{ staff.name }}, {{ staff.title }}</h6>
+            <p>{{ staff.description }}</p>
         </div>
+        {% endfor %}
+        {% endfor %}
     </div>
 </div>
 <div class="Gradient py-5">

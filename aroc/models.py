@@ -17,3 +17,38 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return '{} {}'.format(self.first_name, self.last_name)
+
+class StaffCategory(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    order_id = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        ordering = ('order_id',)
+        verbose_name_plural = 'staff categories'
+
+    def __str__(self):
+        return self.name
+
+class Staff(models.Model):
+    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
+    category = models.ForeignKey(StaffCategory, on_delete=models.SET_NULL, 
+        null=True, blank=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('category',)
+        verbose_name_plural = 'staff'
+
+    def __str__(self):
+        return self.name
+
+class Page(models.Model):
+    name = models.CharField(max_length=255)
+    content = models.TextField(blank=True)
+    is_header_link = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
