@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'aroc',
     'crispy_forms',
     'crispy_bootstrap5'
@@ -117,6 +118,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+
 SENDGRID_API_KEY = get_env_variable('SENDGRID_API_KEY')
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
@@ -129,6 +131,19 @@ SERVER_EMAIL = 'server@mail.araborganizing.org'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+AWS_ACCESS_KEY_ID = get_env_variable('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = get_env_variable('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = get_env_variable('S3_BUCKET')
+AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(
+    AWS_STORAGE_BUCKET_NAME)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+AWS_PUBLIC_MEDIA_LOCATION = 'media/public'
+AWS_PRIVATE_MEDIA_LOCATION = 'media/private'
+
+MEDIA_ROOT = BASE_DIR / 'media'
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "static/"
