@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['aroc.herokuapp.com', 'araborganizing.org']
+ALLOWED_HOSTS = ['aroc.herokuapp.com', 'araborganizing.org', 'www.araborganizing.org']
 
 if "DATABASE_URL" in os.environ:
     # Configure Django for DATABASE_URL environment variable.

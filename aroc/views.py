@@ -7,7 +7,8 @@ from django.views.generic.edit import CreateView
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout
 
-from .models import Staff, Subscriber
+from .models import (Feature, Overview, Page, 
+    Staff, Subscriber)
 
 class Home(SuccessMessageMixin, CreateView):
     model = Subscriber
@@ -17,11 +18,21 @@ class Home(SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('home')
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['overview'] = Overview.objects.first()
+        context['features'] = Feature.objects.filter(
+            is_active=True)
+        context['pages'] = Page.objects.filter(
+            is_active=True)
+        return context
+
     def get_form(self, form_class=None):
-       form = super().get_form(form_class)
-       form.helper = FormHelper()
-       form.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary w-100'))
-       return form
+        form = super().get_form(form_class)
+        form.helper = FormHelper()
+        form.helper.add_input(Submit('submit', 'Submit', 
+            css_class='btn-primary w-100'))
+        return form
 
 class StaffList(ListView):
     model = Staff
