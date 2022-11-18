@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 from django_aroc.storage_backends import PrivateMediaStorage
 from django_aroc.storage_backends import PublicMediaStorage
@@ -9,6 +10,7 @@ class Overview(models.Model):
     donate_text = models.TextField(blank=True)
     newsletter_text = models.TextField(blank=True)
     quote = models.TextField(blank=True)
+    quote_author = models.CharField(max_length=255, blank=True)
     donate_link = models.URLField(blank=True)
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
@@ -65,6 +67,7 @@ class Staff(models.Model):
 
 class Page(models.Model):
     name = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(storage=PublicMediaStorage(), 
         upload_to='img/', blank=True, null=True)
@@ -73,6 +76,10 @@ class Page(models.Model):
      
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Page, self).save(*args, **kwargs)
 
 class Feature(models.Model):
     name = models.CharField(max_length=10)

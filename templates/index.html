@@ -7,7 +7,7 @@
 </div>
 <div class="bg-black py-5">
     <div class="mx-auto w-75">
-        <h2 class="Vision text-white">AROC envisions powerful and liberated Arab communities living with freedom and self-determination from the Bay Area to our homelands. We are abolitionists, feminists, and internationalists who believe that the liberation of SWANA (South West Asian North African) people is inextricably tied to the liberation of all oppressed people.</h2>
+        <h2 class="Vision text-white">{{ overview.hero_text }}</h2>
     </div>
     <div class="mx-auto w-75 py-5 d-flex flex-lg-row flex-column justify-content-between">
         <a href="{% url 'learn' %}" class="PhotoSection d-flex flex-column justify-content-center SectionOne">
@@ -38,15 +38,15 @@
 </div>
 <div class="mx-auto w-75 py-5">
     <h3 class="SectionTitle text-uppercase">Donate</h3>
-    <p class="py-4">AROC is a fiscally sponsored project of Tides Center, a 501(c)(3).</p>
+    <p class="py-4">{{ overview.donate_text }}</p>
     <div class="social-donate my-3">
-        <a class="OvalButton DonateButton d-inline-block" href="https://araborganizing.networkforgood.com/projects/100246-main-giving-page">Donate</a>
+        <a class="OvalButton DonateButton DonateButton--wide d-inline-block" href="https://araborganizing.networkforgood.com/projects/100246-main-giving-page">Donate</a>
     </div>
     <hr class="my-5">
     <h3 class="SectionTitle text-uppercase">Stay Connected</h3>
     <div class="d-flex flex-lg-row flex-column py-4">
         <div style="flex:1;">
-            <p style="width:85%;">Sign up for our newsletter to keep up with our current campaigns, get announcements about current actions and rapid response mobilizations, and general updates about our work.</p>
+            <p style="width:85%;">{{ overview.newsletter_text }}</p>
         </div>
         <div style="flex:1;">
             {% crispy form form.helper %}
@@ -55,7 +55,7 @@
 </div>
 <div class="Gradient py-5">
     <div class="mx-auto w-75 py-5">
-        <h4 class="text-white text-center text-uppercase py-3">"Your power is relative, but it is real. And if you do not learn to use it, it will be used, against you, and me, and our children. Change did not begin with you, and it will not end with you, but what you do in your life is an absolutely vital piece of that chain."</h4>
+        <h4 class="text-white text-center text-uppercase py-3">{{ overview.quote }}</h4>
         <p class="Quote-byline text-white text-center"><em>- Audre Lorde</em></p>
     </div>
 </div>
