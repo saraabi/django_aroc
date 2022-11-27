@@ -1,3 +1,6 @@
+import json
+import urllib
+
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -10,7 +13,45 @@ from crispy_forms.layout import Submit, Layout
 from .models import (Feature, Overview, Page, 
     Staff, Subscriber)
 
-class Home(SuccessMessageMixin, CreateView):
+class RecaptchaMixin:
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['captcha_key'] = settings.RECAPTCHA_KEY
+        return context
+    
+    def get_captcha_token(self, form=None):
+        if form.cleaned_data.get('recaptcha'):
+            return form.cleaned_data.get('recaptcha')
+        else:
+            return self.request.POST.get('recaptcha')
+        
+    def validate_captcha(self, recaptcha_response):
+        url = 'https://www.google.com/recaptcha/api/siteverify'
+        values = {
+            'secret': settings.RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        data = urllib.parse.urlencode(values).encode()
+        req =  urllib.request.Request(url, data=data)
+        response = urllib.request.urlopen(req)
+        return json.loads(response.read().decode())
+
+    def get_json_response(self, response):
+        return JsonResponse({'data': response})
+
+    def form_valid(self, form):
+        result = self.validate_captcha(
+            self.get_captcha_token(form)
+        )
+        if result['success']:
+            return super().form_valid(form)
+        else:
+            form.add_error('email', 'Sorry, an error occurred.\
+                Please try again.')
+            return self.form_invalid(form)
+
+class Home(SuccessMessageMixin, RecaptchaMixin, CreateView):
     model = Subscriber
     fields = ('first_name', 'last_name', 'email', 'phone', 
         'category', 'is_subscribed_sms')

@@ -151,6 +151,10 @@ STATIC_URL = "static/"
 # Enable WhiteNoise's GZip compression of static assets.
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+RECAPTCHA_KEY = get_env_variable('RECAPTCHA_KEY')
+RECAPTCHA_SECRET = get_env_variable('RECAPTCHA_SECRET')
+
+
 # Test Runner Config
 class HerokuDiscoverRunner(DiscoverRunner):
     """Test Runner for Heroku CI, which provides a database for you.

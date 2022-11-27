@@ -60,3 +60,19 @@
     </div>
 </div>
 {% endblock %}
+
+{% block javascript %}
+<script src="https://www.google.com/recaptcha/api.js?render={{ captcha_key }}"></script>
+<script>
+    grecaptcha.ready(function() {
+    $( 'form' ).submit(function(e){
+        var form = this;
+        e.preventDefault()
+        grecaptcha.execute('{{ captcha_key }}', {action: 'newsletterform'}).then(function(token) {
+        $( 'form' ).find( '#id_recaptcha' ).val(token);
+        form.submit();
+        });
+    });
+    });
+</script>
+{% endblock %}
