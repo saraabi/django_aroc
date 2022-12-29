@@ -1,7 +1,7 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, View
+from django.views.generic import DetailView, ListView, View
 from django.views.generic.edit import CreateView
 
 from crispy_forms.helper import FormHelper
@@ -37,3 +37,7 @@ class Home(SuccessMessageMixin, CreateView):
 class StaffList(ListView):
     model = Staff
 
+class PageDetail(DetailView):
+    model = Page
+
+    
