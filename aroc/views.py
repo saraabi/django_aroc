@@ -1,7 +1,9 @@
 import json
 import urllib
 
+from django.conf import settings
 from django.contrib.messages.views import SuccessMessageMixin
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, View
@@ -81,4 +83,4 @@ class StaffList(ListView):
 class PageDetail(DetailView):
     model = Page
 
-    
+
