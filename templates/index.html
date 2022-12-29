@@ -62,7 +62,7 @@
 {% endblock %}
 
 {% block javascript %}
-<script src="https://www.google.com/recaptcha/api.js?render={{ captcha_key }}"></script>
+{% comment %} <script src="https://www.google.com/recaptcha/api.js?render={{ captcha_key }}"></script>
 <script>
     grecaptcha.ready(function() {
     $( 'form' ).submit(function(e){
@@ -74,5 +74,5 @@
         });
     });
     });
-</script>
+</script> {% endcomment %}
 {% endblock %}

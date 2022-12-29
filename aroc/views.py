@@ -31,7 +31,7 @@ class RecaptchaMixin:
     def validate_captcha(self, recaptcha_response):
         url = 'https://www.google.com/recaptcha/api/siteverify'
         values = {
-            'secret': settings.RECAPTCHA_SECRET_KEY,
+            'secret': settings.RECAPTCHA_SECRET,
             'response': recaptcha_response
         }
         data = urllib.parse.urlencode(values).encode()
@@ -53,7 +53,7 @@ class RecaptchaMixin:
                 Please try again.')
             return self.form_invalid(form)
 
-class Home(SuccessMessageMixin, RecaptchaMixin, CreateView):
+class Home(SuccessMessageMixin, CreateView):
     model = Subscriber
     fields = ('first_name', 'last_name', 'email', 'phone', 
         'category', 'is_subscribed_sms')
